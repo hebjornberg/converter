@@ -16,6 +16,28 @@ def convert_unit(value, from_unit, to_unit, category):
         }
     }
     
-    print(conversions)
+    try: 
+        conversions_func = conversions[category][from_unit][to_unit]
+        converted_value = conversions_func(value)
+        return converted_value
+    except KeyError: 
+        "Invalid unit or category. Please try again."
 
-convert_unit(0, "celsius", "fahrenheit", "temperature")
+def main(): 
+    while True:
+        print("\nMenu:")
+        print("1. Temperature")
+
+        choice = input("Enter your choice:")
+
+        if choice == "1":
+            category = "temperature"
+            from_unit = input("Enter unit to convert from (celsius, kelvin, fahrenheit):").lower()
+            to_unit = input("Enter the value you want to convert to (celsius, kelvin, fahrenheit:)").lower()
+        else: 
+            print("Invalid choice. Try again.")
+            break
+
+
+main()
+
