@@ -43,6 +43,52 @@ def convert_unit(value, from_unit, to_unit, category):
             "pounds": {
                 "kilograms": lambda x: x / 2.20462
             }
+        }, 
+        "time": {
+            "years": {
+                "months": lambda x: x * 12, 
+                "days": lambda x: x * 365, 
+                "hours": lambda x: x * 8760, 
+                "minutes": lambda x: x * 525600, 
+                "seconds": lambda x: x * 31536000
+            }, 
+            "months": {
+                "years": lambda x: x / 12, 
+                "days": lambda x: x * 30.44, 
+                "hours": lambda x: x * 730, 
+                "minutes": lambda x: x * 43800, 
+                "seconds": lambda x: x * 2628000
+            }, 
+            "days": {
+                "years": lambda x: x / 365.25, 
+                "months": lambda x: x / 30.44, 
+                "hours": lambda x: x * 24, 
+                "minutes": lambda x: x * 1440, 
+                "seconds": lambda x: x * 86400
+            }, 
+            "hours": {
+                "years": lambda x: x / 8760, 
+                "months": lambda x: x / 730, 
+                "days": lambda x: x / 24, 
+                "minutes": lambda x: x * 60, 
+                "seconds": lambda x: x * 3600
+            },
+            "minutes": {
+                "years": lambda x: x / 525600, 
+                "months": lambda x: x / 43800, 
+                "days": lambda x: x / 1440, 
+                "hours": lambda x: x / 60, 
+                "seconds": lambda x: x * 60
+            }, 
+            "seconds": {
+                "years": lambda x: x / 31536000, 
+                "months": lambda x: x / 2628000, 
+                "days": lambda x: x / 86400, 
+                "hours": lambda x: x / 3600, 
+                "minutes": lambda x: x / 60
+            }, 
+         
+
         }
     }
     
@@ -70,6 +116,14 @@ unit_abbr = {
     "mi": "miles", 
     "km" : "kilometer"
     }, 
+    "time": {
+    "yr": "years", 
+    "mth": "months", 
+    "d": "days", 
+    "hr" : "hours", 
+    "min": "minutes", 
+    "s": "seconds"
+    }, 
 }
 
 def main(): 
@@ -78,7 +132,8 @@ def main():
         print("1. Temperature")
         print("2. Length")
         print("3. Weight")
-        print("4. Exit")
+        print("4. Time")
+        print("5. Exit")
 
         choice = input("Enter your choice:")
 
@@ -94,7 +149,11 @@ def main():
             category = "weight"
             from_unit = input("Enter unit to convert from (e.g., kg, lbs):").lower()
             to_unit = input("Enter the unit to convert to (e.g., kg, lbs):").lower()
-        elif choice == "4": 
+        elif choice == "4":
+            category = "time"
+            from_unit = input("Enter unit to convert from (e.g., yr, mth, d, hr, min, s):").lower()
+            to_unit = input("Enter the unit to convert to (e.g., yr, mth, d, hr, min, s):").lower()
+        elif choice == "5": 
             print("Exiting...")
             break
         else: 
