@@ -37,13 +37,19 @@ def convert_unit(value, from_unit, to_unit, category):
             }
         }, 
         "weight": {
-            "kilograms"
+            "kilograms": {
+                "pounds": lambda x: x * 2.20462
+            }, 
+            "pounds": {
+                "kilograms": lambda x: x / 2.20462
+            }
         }
     }
     
     try: 
         conversions_func = conversions[category][from_unit][to_unit]
         converted_value = conversions_func(value)
+        converted_value = round(converted_value, 2)
         return converted_value
     except KeyError: 
         "Invalid unit or category. Please try again."
@@ -71,7 +77,8 @@ def main():
         print("\nMenu:")
         print("1. Temperature")
         print("2. Length")
-        print("3. Exit")
+        print("3. Weight")
+        print("4. Exit")
 
         choice = input("Enter your choice:")
 
@@ -81,9 +88,13 @@ def main():
             to_unit = input("Enter the value you want to convert to (celsius/C, kelvin/K, fahrenheit/F):").lower()
         elif choice == "2":
             category = "length"
-            from_unit = input("Enter unit to convert from (e.g. , m, ft, mi, km):").lower()
-            to_unit = input("Enter the unit to convert to (e.g. , m, ft, mi, km):").lower()
-        elif choice == "3": 
+            from_unit = input("Enter unit to convert from (e.g., m, ft, mi, km):").lower()
+            to_unit = input("Enter the unit to convert to (e.g., m, ft, mi, km):").lower()
+        elif choice == "3":
+            category = "weight"
+            from_unit = input("Enter unit to convert from (e.g., kg, lbs):").lower()
+            to_unit = input("Enter the unit to convert to (e.g., kg, lbs):").lower()
+        elif choice == "4": 
             print("Exiting...")
             break
         else: 
