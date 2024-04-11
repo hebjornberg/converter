@@ -13,6 +13,14 @@ def convert_unit(value, from_unit, to_unit, category):
                 "celsius": lambda x: x - 273.15,
                 "fahrenheit": lambda x: (x * 9/5) - 459.67
             }
+        }, 
+        "length": {
+            "meters": {
+                "feet": lambda x: x * 3.28084
+            }, 
+            "feet" : {
+                "meters": lambda x: x / 3.28084
+            }
         }
     }
     
@@ -27,6 +35,8 @@ def main():
     while True:
         print("\nMenu:")
         print("1. Temperature")
+        print("2. Length")
+        print("3. Exit")
 
         choice = input("Enter your choice:")
 
@@ -34,6 +44,13 @@ def main():
             category = "temperature"
             from_unit = input("Enter unit to convert from (celsius, kelvin, fahrenheit):").lower()
             to_unit = input("Enter the value you want to convert to (celsius, kelvin, fahrenheit:)").lower()
+        elif choice == "2":
+            category = "length"
+            from_unit = input("Enter unit to convert from (meter, feet):").lower()
+            to_unit = input("Enter the unit to convert to (meter, feet):").lower()
+        elif choice == "3": 
+            print("Exiting...")
+            break
         else: 
             print("Invalid choice. Try again.")
             break
