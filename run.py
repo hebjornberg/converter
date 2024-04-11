@@ -38,6 +38,20 @@ def main():
             print("Invalid choice. Try again.")
             break
 
+        while True: 
+            try: 
+                value = float(input(f"Enter value in {from_unit}:"))
+                break
+            except ValueError:
+                print("Invalid value. Please enter a number.")
+
+        result = convert_unit(value, from_unit, to_unit, category)
+
+        if isinstance(result, str):
+            print(result)
+        else: 
+            print(f"{value} {from_unit} is equal to {result} {to_unit}")
+
 
 main()
 
