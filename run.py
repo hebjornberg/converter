@@ -98,13 +98,14 @@ def convert_unit(value, from_unit, to_unit, category):
         converted_value = round(converted_value, 2)
         return converted_value
     except KeyError: 
-        "Invalid unit or category. Please try again."
+        return "Invalid unit or category. Please try again."
+
 
 unit_abbr = {
     "temperature": {
-    "C": "celsius", 
-    "F": "fahrenheit", 
-    "K": "kelvin"
+    "c": "celsius", 
+    "f": "fahrenheit", 
+    "k": "kelvin"
     }, 
     "weight": {
     "kg": "kilograms", 
@@ -114,7 +115,7 @@ unit_abbr = {
     "m": "meters", 
     "ft": "feet", 
     "mi": "miles", 
-    "km" : "kilometer"
+    "km" : "kilometers"
     }, 
     "time": {
     "yr": "years", 
@@ -128,6 +129,8 @@ unit_abbr = {
 
 def main(): 
     while True:
+        print("\nWelcome to the Unit Converter!")
+        print("\nEnter the number of the unit you wish to convert")
         print("\nMenu:")
         print("1. Temperature")
         print("2. Length")
@@ -139,8 +142,8 @@ def main():
 
         if choice == "1":
             category = "temperature"
-            from_unit = input("Enter unit to convert from (celsius/C, kelvin/K, fahrenheit/F):").lower()
-            to_unit = input("Enter the value you want to convert to (celsius/C, kelvin/K, fahrenheit/F):").lower()
+            from_unit = input("Enter unit to convert from (celsius/c, kelvin/c, fahrenheit/f):").lower()
+            to_unit = input("Enter the value you want to convert to (celsius/c, kelvin/k, fahrenheit/f):").lower()
         elif choice == "2":
             category = "length"
             from_unit = input("Enter unit to convert from (e.g., m, ft, mi, km):").lower()
@@ -158,7 +161,7 @@ def main():
             break
         else: 
             print("Invalid choice. Try again.")
-            break
+            continue
 
         while True: 
             try: 
@@ -172,7 +175,7 @@ def main():
             to_unit = unit_abbr[category][to_unit]
         except KeyError:
             print("Invalid unit. Please try again.")
-            continue
+            break
 
         result = convert_unit(value, from_unit, to_unit, category)
 
@@ -180,6 +183,12 @@ def main():
             print(result)
         else: 
             print(f"{value} {from_unit} is equal to {result} {to_unit}")
+
+        # Ask the user if they want to return to menu or exit the program
+        choice = input(f"\nEnter 'm' to return to menu or 'e' to exit:").lower()
+        if choice == 'e': 
+            print("Exiting...")
+            break
 
 
 main()
