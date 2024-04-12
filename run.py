@@ -138,24 +138,24 @@ def main():
         print("4. Time")
         print("5. Exit")
 
-        choice = input("Enter your choice:")
+        choice = input("Enter your choice:\n")
 
         if choice == "1":
             category = "temperature"
-            from_unit = input("Enter unit to convert from (celsius/c, kelvin/c, fahrenheit/f):").lower()
-            to_unit = input("Enter the value you want to convert to (celsius/c, kelvin/k, fahrenheit/f):").lower()
+            from_unit = input("Enter unit to convert from (celsius/c, kelvin/c, fahrenheit/f):\n").lower()
+            to_unit = input("Enter the value you want to convert to (celsius/c, kelvin/k, fahrenheit/f):\n").lower()
         elif choice == "2":
             category = "length"
-            from_unit = input("Enter unit to convert from (e.g., m, ft, mi, km):").lower()
-            to_unit = input("Enter the unit to convert to (e.g., m, ft, mi, km):").lower()
+            from_unit = input("Enter unit to convert from (e.g., m, ft, mi, km):\n").lower()
+            to_unit = input("Enter the unit to convert to (e.g., m, ft, mi, km):\n").lower()
         elif choice == "3":
             category = "weight"
-            from_unit = input("Enter unit to convert from (e.g., kg, lbs):").lower()
-            to_unit = input("Enter the unit to convert to (e.g., kg, lbs):").lower()
+            from_unit = input("Enter unit to convert from (e.g., kg, lbs):\n").lower()
+            to_unit = input("Enter the unit to convert to (e.g., kg, lbs):\n").lower()
         elif choice == "4":
             category = "time"
-            from_unit = input("Enter unit to convert from (e.g., yr, mth, d, hr, min, s):").lower()
-            to_unit = input("Enter the unit to convert to (e.g., yr, mth, d, hr, min, s):").lower()
+            from_unit = input("Enter unit to convert from (e.g., yr, mth, d, hr, min, s):\n").lower()
+            to_unit = input("Enter the unit to convert to (e.g., yr, mth, d, hr, min, s):\n").lower()
         elif choice == "5": 
             print("Exiting...")
             break
