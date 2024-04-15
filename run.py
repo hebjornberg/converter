@@ -174,12 +174,12 @@ def main():
             except ValueError:
                 print("Invalid value. Please enter a number.")
 
-        try: 
-            from_unit = unit_abbr[category][from_unit]
-            to_unit = unit_abbr[category][to_unit]
-        except KeyError:
-            print("Invalid unit. Please try again.")
-            continue
+            try: 
+                from_unit = unit_abbr[category][from_unit]
+                to_unit = unit_abbr[category][to_unit]
+            except KeyError:
+                print("Invalid unit. Please try again.")
+                continue
 
         result = convert_unit(value, from_unit, to_unit, category)
 
