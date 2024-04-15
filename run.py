@@ -1,4 +1,3 @@
-
 #Dictionary for unit conversions
 def convert_unit(value, from_unit, to_unit, category):
     conversions = {
@@ -94,7 +93,7 @@ def convert_unit(value, from_unit, to_unit, category):
         }
     }
     
-    # 
+    # Retrieve conversion function from dictionary
     try: 
         conversions_func = conversions[category][from_unit][to_unit]
         converted_value = conversions_func(value)
@@ -103,7 +102,7 @@ def convert_unit(value, from_unit, to_unit, category):
     except KeyError: 
         return "Invalid unit. Please try again."
 
-#Dictionary for being able to put in the unit symbol in the converter
+#Dictionary for being able to put in the unit symbol in the converter as well as unit name
 
 unit_abbr = {
     "temperature": {
@@ -131,8 +130,9 @@ unit_abbr = {
     }, 
 }
 
-def main(): 
+def main():
     while True:
+        #Print menu
         print("\nWelcome to the Unit Converter!")
         print("\nEnter the number of the unit you wish to convert")
         print("\nMenu:")
@@ -142,8 +142,10 @@ def main():
         print("4. Time")
         print("5. Exit")
 
+        # Get user's choice 
         choice = input("Enter your choice:\n")
 
+        # Prompt the user to enter the units based on their choice
         if choice == "1":
             category = "temperature"
             from_unit = input("Enter unit to convert from (celsius/c, kelvin/c, fahrenheit/f):\n").lower()
@@ -167,6 +169,8 @@ def main():
             print("Invalid choice. Try again.")
             continue
 
+
+        # Prompt user to enter the value to be converted 
         while True: 
             try: 
                 value = float(input(f"Enter value in {from_unit}:"))
