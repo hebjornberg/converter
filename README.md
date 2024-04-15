@@ -84,3 +84,17 @@ Solved bugs:
 + When initially deploying the program, if an invalid unit was put in the program, the whole program would exit instead of giving the option of returning to the menu. This due to a flaw in the way the try-loop was nested within the function. 
 + At one point, the "Invalid unit. Please try again." would return even if you put in an accurate number. This due to a flaw in how the functions called to the dictionary. This is now resolved. 
 
+Remaining bugs: 
+
++ At the current stage, the program will let you put in any letter in the prompt asking for the unit which you wish to convert from and to, and not warn of the "Invalid unit." until a number is being put in. It will not make a conversion, but it would be desirable that the program warned straight away that you have put in an invalid unit. 
+
+## Deployment 
+
+This program was deployed to the Code Institutes mock terminal on Heroku, through the following steps: 
+
++ On the Dashboard on your Heroku-profile, choose the option "Create new app" 
++ Choose a name for the app you want to deploy
++ In Settings, put in the Config Vars necessary for deployment of your app. 
++ In Deploy, connect your GitHub-repository to Heroku.
++ Click on Deploy Branch. The app is now being built. 
+
