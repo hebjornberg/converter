@@ -170,7 +170,7 @@ def main():
             continue
 
 
-        # Prompt user to enter the value to be converted 
+        # Prompt user to enter the value to be converted and checks that it is a number 
         while True: 
             try: 
                 value = float(input(f"Enter value in {from_unit}:"))
