@@ -1,3 +1,5 @@
+
+#Dictionary for unit conversions
 def convert_unit(value, from_unit, to_unit, category):
     conversions = {
         "temperature": {
@@ -92,14 +94,16 @@ def convert_unit(value, from_unit, to_unit, category):
         }
     }
     
+    # 
     try: 
         conversions_func = conversions[category][from_unit][to_unit]
         converted_value = conversions_func(value)
         converted_value = round(converted_value, 2)
         return converted_value
     except KeyError: 
-        return "Invalid unit or category. Please try again."
+        return "Invalid unit. Please try again."
 
+#Dictionary for being able to put in the unit symbol in the converter
 
 unit_abbr = {
     "temperature": {
@@ -175,7 +179,7 @@ def main():
             to_unit = unit_abbr[category][to_unit]
         except KeyError:
             print("Invalid unit. Please try again.")
-            break
+            continue
 
         result = convert_unit(value, from_unit, to_unit, category)
 
