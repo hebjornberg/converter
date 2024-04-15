@@ -98,3 +98,7 @@ This program was deployed to the Code Institutes mock terminal on Heroku, throug
 + In Deploy, connect your GitHub-repository to Heroku.
 + Click on Deploy Branch. The app is now being built. 
 
+## Credits
+
++ Code Institute for providing 
++ Resources on the internet such as [Stack Overflow](https://stackoverflow.com/questions/32091117/simple-unit-converter-in-python) and [Fabio Musanni - Programming Channel](https://www.youtube.com/watch?v=jtM9RLAENVE&ab_channel=FabioMusanni-ProgrammingChannel) for giving understanding on how to construct a unit converter in Python 
