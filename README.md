@@ -73,8 +73,10 @@ In this program, the dictionary method was chosen, as it was considered easier t
 
 I have tested this code through the following steps: 
 
-+ Put the code through the [PEP8 Python Validator](https://pep8ci.herokuapp.com/) provided from the code institute
-+ Tried the validation process by giving the program invalid inputs: invalid units and strings where numbers are expected
++ Putting the code through the [PEP8 Python Validator](https://pep8ci.herokuapp.com/) provided from the code institute
++ Tried the validation process by giving the program invalid inputs: 
+  + Checking that the validation process works when entering an invalid unit, such as a faulty character (e.g. a,b,o)
+  + Checking that the validation process of conversion works, and that the program does not accept anything else but numbers when converting
 + Tested in local terminal and in the deployed Heroku terminal 
 
 ### Bugs
@@ -100,5 +102,5 @@ This program was deployed to the Code Institutes mock terminal on Heroku, throug
 
 ## Credits
 
-+ Code Institute for providing 
++ Code Institute for learning material regarding how to build a program in Python
 + Resources on the internet such as [Stack Overflow](https://stackoverflow.com/questions/32091117/simple-unit-converter-in-python) and [Fabio Musanni - Programming Channel](https://www.youtube.com/watch?v=jtM9RLAENVE&ab_channel=FabioMusanni-ProgrammingChannel) for giving understanding on how to construct a unit converter in Python 

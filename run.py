@@ -148,7 +148,7 @@ def main():
         # Prompt the user to enter the units based on their choice
         if choice == "1":
             category = "temperature"
-            from_unit = input("Enter unit to convert from (celsius/c, kelvin/c, fahrenheit/f):\n").lower()
+            from_unit = input("Enter unit to convert from (celsius/c, kelvin/k, fahrenheit/f):\n").lower()
             to_unit = input("Enter the value you want to convert to (celsius/c, kelvin/k, fahrenheit/f):\n").lower()
         elif choice == "2":
             category = "length"
